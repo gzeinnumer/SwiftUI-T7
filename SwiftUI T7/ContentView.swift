@@ -9,13 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            List {
+                NavigationLink(destination: HomeView()) {
+                    Label("Courses", systemImage: "book")
+                }
+                NavigationLink(destination: TutorialsView()) {
+                    Label("Tutorials", systemImage: "square")
+                }
+            }.navigationTitle("Learn")
+            
+            HomeView()
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+.previewInterfaceOrientation(.landscapeLeft)
     }
 }
